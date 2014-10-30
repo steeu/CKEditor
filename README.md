@@ -1,9 +1,8 @@
-## Custom Widget CKEditor for [Wakanda](http://wakanda.org)
+## CKEditor for [Wakanda](http://wakanda.org)
 
 CKEditor is an easy to use WYSIWYG editor for Wakanda.
 
 CKEditor website: (http://ckeditor.com)
-
 CKEditor documentation: (http://docs.ckeditor.com)
 
 ### Properties
