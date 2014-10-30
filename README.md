@@ -1,7 +1,7 @@
 ## Custom Widget CKEditor for [Wakanda](http://wakanda.org)
 The __Custom__ widget allows you to...
 
-Editor details: (http://ckeditor.com)
+CKEditor website: (http://ckeditor.com)
 
 CKEditor documentation: (http://docs.ckeditor.com)
 
