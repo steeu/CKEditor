@@ -2,8 +2,8 @@
 
 CKEditor is an easy to use WYSIWYG editor for Wakanda.
 
-CKEditor website: (http://ckeditor.com)
-CKEditor documentation: (http://docs.ckeditor.com)
+* CKEditor website: (http://ckeditor.com)
+* CKEditor documentation: (http://docs.ckeditor.com)
 
 ### Properties
 The CKEditor widget has the following properties:
