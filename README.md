@@ -2,6 +2,7 @@
 The __Custom__ widget allows you to...
 
 Editor details: (http://ckeditor.com)
+
 CKEditor documentation: (http://docs.ckeditor.com)
 
 ### Properties
