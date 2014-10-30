@@ -1,5 +1,6 @@
 ## Custom Widget CKEditor for [Wakanda](http://wakanda.org)
-The __Custom__ widget allows you to...
+
+CKEditor is an easy to use WYSIWYG editor for Wakanda.
 
 CKEditor website: (http://ckeditor.com)
 
