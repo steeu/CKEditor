@@ -16,6 +16,17 @@ The CKEditor widget has the following functions:
 * __setValue()__: set current editor content
 * __getValue()__: get current editor content
 
+### Example
+```javascript
+// save editor content to datasource
+WAF.sources.DATASOURCE_NAME.ATTRIBUTE_NAME = WAF.widgets.WIDGET_NAME.getValue();
+WAF.sources.your_source_name.save({
+  onSuccess:function(event) {
+    // content saved
+  }
+});
+```
+
 ### More Information
 For more information on how to install a custom widget, refer to [Installing a Custom Widget](http://doc.wakanda.org/WakandaStudio0/help/Title/en/page3869.html#1027761).
 
