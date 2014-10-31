@@ -6,13 +6,9 @@ CKEditor is an easy to use WYSIWYG editor for Wakanda.
 * CKEditor documentation: http://docs.ckeditor.com
 
 ### Properties
-The CKEditor widget has the following properties:
-
 * __content__: datasource attribute for content
 
 ### Functions
-The CKEditor widget has the following functions:
-
 * __setValue()__: set current editor content
 * __getValue()__: get current editor content
 
