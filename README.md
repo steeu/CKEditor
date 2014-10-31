@@ -20,7 +20,7 @@ The CKEditor widget has the following functions:
 ```javascript
 // save editor content to datasource
 WAF.sources.DATASOURCE_NAME.ATTRIBUTE_NAME = WAF.widgets.WIDGET_NAME.getValue();
-WAF.sources.your_source_name.save({
+WAF.sources.DATASOURCE_NAME.save({
   onSuccess:function(event) {
     // content saved
   }
