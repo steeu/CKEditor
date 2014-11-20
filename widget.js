@@ -9,7 +9,7 @@ WAF.define('CKEditor', ['waf-core/widget'], function(widget) {
 
         	// create editor with CKEditor plugin
         	_this.editor = CKEDITOR.appendTo(_this.node, {
-                customConfig: _this.customConfig()
+                customConfig: _this.customConfigPath()
             });
         	
 //            /* Define a custom event */
@@ -23,7 +23,7 @@ WAF.define('CKEditor', ['waf-core/widget'], function(widget) {
 //    			this.node.value = moment(this.dateTime()).format('DD.MM.YYYY HH:mm');
             }
     	}),
-    	customConfig: widget.property({
+    	customConfigPath: widget.property({
     		type: 'string',
     		defaultValue: ''
     	}),

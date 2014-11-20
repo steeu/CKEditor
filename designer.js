@@ -8,7 +8,7 @@
 //    CKEditor.addEvent('myEvent');
 
 //    /* Customize existing properties */
-    CKEditor.customizeProperty('customConfig', {
+    CKEditor.customizeProperty('customConfigPath', {
         title: 'Config file path',
         description: 'Path to custom config file',
         display: true,
