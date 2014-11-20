@@ -1,0 +1,27 @@
+{
+    "name": "CKEditor",
+    "studioName": "CKEditor",
+    "category": "Custom Widgets",
+    "iconPath": "/icons/ckeditor.png",
+    "author": "Widget Developer",
+    "contributors": [
+        "Developer 1",
+        "Developer 2"
+    ],
+    "version": "1.0.0",
+    "copyright": "(c) 2014 Widget Developer",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/developer/Widget.git"
+    },
+    "keywords": ["wakanda", "widget"],
+    "engines": {"wakanda": ">= 8"},
+    "license": "MIT",
+    "loadDependencies": [
+        {"id": "Widget_V2"},
+        {"id": "CKEditor/widget.js", "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "CKEditor/css/widget.css", "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "CKEditor/designer.js", "studioOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
+        {"id": "CKEditor/libs/ckeditor/ckeditor.js", "version": "4.4.5", "path": "WIDGETS_CUSTOM"}
+    ]
+}
