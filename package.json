@@ -3,7 +3,7 @@
     "studioName": "CKEditor",
     "category": "Custom Widgets",
     "iconPath": "/icons/ckeditor.png",
-    "author": "Widget Developer",
+    "author": "Stefan Eugster",
     "contributors": [
         "Developer 1",
         "Developer 2"
@@ -12,10 +12,10 @@
     "copyright": "(c) 2014 Widget Developer",
     "repository": {
         "type": "git",
-        "url": "https://github.com/developer/Widget.git"
+        "url": "https://github.com/stefaneugster/CKEditor.git"
     },
     "keywords": ["wakanda", "widget"],
-    "engines": {"wakanda": ">= 8"},
+    "engines": {"wakanda": ">= 9"},
     "license": "MIT",
     "loadDependencies": [
         {"id": "Widget_V2"},
