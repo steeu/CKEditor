@@ -13,17 +13,6 @@ CKEditor is an easy to use WYSIWYG editor for Wakanda.
 * __setValue()__: set current editor content
 * __getValue()__: get current editor content
 
-### Example: content save
-```javascript
-// save editor content to datasource
-WAF.sources.DATASOURCE_NAME.ATTRIBUTE_NAME = WAF.widgets.WIDGET_NAME.getValue();
-WAF.sources.DATASOURCE_NAME.save({
-  onSuccess:function(event) {
-    // content saved
-  }
-});
-```
-
 ### Example: custom config file
 provided in the ckeditors folder
 ```javascript
