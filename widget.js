@@ -1,6 +1,7 @@
 WAF.define('CKEditor', ['waf-core/widget'], function(widget) {
 	
-	var _this;
+	var _this,
+	    ckEditorDatasource;
 	
     var CKEditor = widget.create('CKEditor', {
         init: function() {
@@ -12,17 +13,30 @@ WAF.define('CKEditor', ['waf-core/widget'], function(widget) {
                 customConfig: _this.customConfigPath()
             });
 
-            // editor events
-            _this.editor.on( 'blur', function( e ) {                
-                // set datasource value
-                _this.content(_this.editor.getData());
-                // log
-                console.log('Set datasource value of CKEditor content');
+            // add content to datasource
+            _this.editor.on('change', function( e ) {
+            	// clear timer
+            	if ( _this.throttle ) {
+            		clearTimeout(_this.throttle);
+            	}
+            	// throttle function calls to every 250 milliseconds
+            	_this.throttle = setTimeout(function(){
+                    // set datasource value
+                    _this.content(_this.editor.getData());
+            	}, 250);
+            });
+            // set editor contetn on datasource current element change
+            ckEditorDatasource = _this.content.boundDatasource();
+            
+            WAF.sources[ckEditorDatasource.datasourceName].addListener("onCurrentElementChange", function (event){
+                _this.editor.setData(event.dataSource[ckEditorDatasource.attribute]);
             });
         },
         content: widget.property({
+            type: 'string',
+    		defaultValue: '',
     		onChange: function(value) {
-    			_this.editor.setData(value);
+//    			_this.editor.setData(value);
             }
     	}),
     	customConfigPath: widget.property({
