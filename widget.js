@@ -11,16 +11,18 @@ WAF.define('CKEditor', ['waf-core/widget'], function(widget) {
         	_this.editor = CKEDITOR.appendTo(_this.node, {
                 customConfig: _this.customConfigPath()
             });
-        	
-//            /* Define a custom event */
-//            this.fire('myEvent', {
-//                message: 'Hello'
-//            });
+
+            // editor events
+            _this.editor.on( 'blur', function( e ) {                
+                // set datasource value
+                _this.content(_this.editor.getData());
+                // log
+                console.log('Set datasource value of CKEditor content');
+            });
         },
         content: widget.property({
     		onChange: function(value) {
     			_this.editor.setData(value);
-//    			this.node.value = moment(this.dateTime()).format('DD.MM.YYYY HH:mm');
             }
     	}),
     	customConfigPath: widget.property({
@@ -35,19 +37,7 @@ WAF.define('CKEditor', ['waf-core/widget'], function(widget) {
     		// set editor data
     		_this.editor.setData(value);
     	}
-//        ,
-//        /* Create a property */
-//        test: widget.property({
-//            onChange: function(newValue) {
-//                this.node.innerHTML = this.test(); /* this contains the widget and newValue contains its current value */
-//            }
-//        })
     });
-
-//    /* Map the custom event above to the DOM click event */
-//    CKEditor.mapDomEvents({
-//        'click': 'action'
-//    });
 
     return CKEditor;
 
