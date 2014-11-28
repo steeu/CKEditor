@@ -33,7 +33,7 @@ WAF.define('CKEditor', ['waf-core/widget'], function(widget) {
                 // set editor content on current element change
                 WAF.sources[ckEditorDatasource.datasourceName].addListener("onCurrentElementChange", function (event){
                     ckEditorContent = event.dataSource[ckEditorDatasource.attribute];
-		    // check event kind
+		    		// check event kind
                     if (event.eventKind == 'onCurrentElementChange') {
                         _this.setValue(ckEditorContent);
                     }
