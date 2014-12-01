@@ -41,6 +41,7 @@ WAF.define('CKEditor', ['waf-core/widget'], function(widget) {
                 
                 // set initial editor content
                 _this.editor.on('instanceReady', function(){
+                    _this.editor.resize(_this.width(), _this.height());
                     _this.setValue(ckEditorContent);
                 });	
             } catch (e) {
