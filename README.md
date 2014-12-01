@@ -2,12 +2,14 @@
 
 CKEditor is an easy to use WYSIWYG editor for Wakanda.
 
+![CKEditor](/doc/ckeditor.png?raw=true)
+
 * CKEditor website: http://ckeditor.com
 * CKEditor documentation: http://docs.ckeditor.com
 
 ### Properties
 * __content__: datasource attribute for content
-* __customConfigPath__: path to custom config file (example: /ckeditor/ckeditor_config.js)
+* __customConfigPath__: path to custom config file (example: /ckeditor/ckeditor_config.js, [config docs](http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-skin))
 
 ### Functions
 * __setValue()__: set current editor content
@@ -20,6 +22,13 @@ provided in the ckeditors folder
  * @license Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
+
+// Load plugins from external directories
+CKEDITOR.plugins.addExternal( 'PLUGIN_NAME', '/ckeditor/plugins/PLUGIN_NAME/', 'plugin.js' );
+CKEDITOR.config.extraPlugins = 'PLUGIN_NAME';
+
+// Load skin from external directory
+CKEDITOR.config.skin = 'THEME_NAME,/ckeditor/THEME_NAME/'
 
 CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here.
