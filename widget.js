@@ -1,13 +1,9 @@
 WAF.define('CKEditor', ['waf-core/widget'], function(widget) {
 	
-	var _this,
-	    ckEditorDatasource,
-	    ckEditorContent;
-	
     var CKEditor = widget.create('CKEditor', {
         init: function() {
             try {
-            	_this = this;
+            	var _this = this;
 
             	// create editor with CKEditor plugin
             	_this.editor = CKEDITOR.appendTo(_this.node, {
@@ -32,18 +28,18 @@ WAF.define('CKEditor', ['waf-core/widget'], function(widget) {
                 
                 // set editor content on current element change
                 WAF.sources[ckEditorDatasource.datasourceName].addListener("onCurrentElementChange", function (event){
-                    ckEditorContent = event.dataSource[ckEditorDatasource.attribute];
+                    var value = event.dataSource[ckEditorDatasource.attribute];
 		    		// check event kind
                     if (event.eventKind == 'onCurrentElementChange') {
-                        _this.setValue(ckEditorContent);
+                        _this.setValue(value);
                     }
                 });
                 
                 // set initial editor content
                 _this.editor.on('instanceReady', function(){
                     _this.editor.resize(_this.width(), _this.height());
-                    _this.setValue(ckEditorContent);
-                });	
+                    _this.setValue(_this.content());
+                });
             } catch (e) {
                 console.log(e.message);
             }
@@ -57,11 +53,14 @@ WAF.define('CKEditor', ['waf-core/widget'], function(widget) {
     		defaultValue: ''
     	}),
     	getValue: function() {
+    	    var _this = this;
     		// get editor data
-    		return _this.editor.getData();
+    		return _this.content();
     	},
     	setValue: function(value) {
+    	    var _this = this;
     		// set editor data
+    		_this.content(value);
     		_this.editor.setData(value);
     	}
     });
