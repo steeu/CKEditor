@@ -1,3 +1,6 @@
+// set editor basepath
+CKEDITOR_BASEPATH = '/widgets-custom/CKEditor/libs/ckeditor/';
+
 WAF.define('CKEditor', ['waf-core/widget'], function(widget) {
 	
     var CKEditor = widget.create('CKEditor', {
