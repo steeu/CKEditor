@@ -16,12 +16,12 @@
 		sourceDisplay: false
     });
 
-    CKEditor.customizeProperty('content', {
-        title: '',
-        description: '',
-        display: false,
-        sourceTitle: 'Content source',
-		sourceDisplay: true
+    CKEditor.customizeProperty('language', {
+        title: 'Editor language',
+        description: 'Editor user interface language',
+        display: true,
+        sourceTitle: '',
+		sourceDisplay: false
     });
 
 //    /* Add a Label property */

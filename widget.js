@@ -7,38 +7,34 @@ WAF.define('CKEditor', ['waf-core/widget'], function(widget) {
 
             	// create editor with CKEditor plugin
             	_this.editor = CKEDITOR.appendTo(_this.node, {
-                    customConfig: _this.customConfigPath()
+                    customConfig: _this.customConfigPath(),
+                    language: _this.language()
                 });
 
                 // add content to datasource
-                _this.editor.on('change', function( e ) {
+                _this.editor.on('change', function(e) {
                 	// clear timer
-                	if ( _this.throttle ) {
-                		clearTimeout(_this.throttle);
+                	if (_this.throttleGet) {
+                		clearTimeout(_this.throttleGet);
                 	}
                 	// throttle function calls to every 250 milliseconds
-                	_this.throttle = setTimeout(function(){
+                	_this.throttleGet = setTimeout(function() {
+                        subscriber.pause();
                         // set datasource value
                         _this.content(_this.editor.getData());
+                        subscriber.resume();
                 	}, 250);
                 });
                 
                 // set editor content on datasource current element change
-                ckEditorDatasource = _this.content.boundDatasource();
-                
-                // set editor content on current element change
-                WAF.sources[ckEditorDatasource.datasourceName].addListener("onCurrentElementChange", function (event){
-                    var value = event.dataSource[ckEditorDatasource.attribute];
-		    		// check event kind
-                    if (event.eventKind == 'onCurrentElementChange') {
-                        _this.setValue(value);
-                    }
+                var subscriber = _this.content.onChange(function() {
+                	_this.setValue(_this.content());
                 });
                 
                 // set initial editor content
-                _this.editor.on('instanceReady', function(){
+                _this.editor.on('instanceReady', function() {
                     _this.editor.resize(_this.width(), _this.height());
-                    _this.setValue(_this.content());
+                    _this.editor.setData(_this.content());
                 });
             } catch (e) {
                 console.log(e.message);
@@ -52,21 +48,34 @@ WAF.define('CKEditor', ['waf-core/widget'], function(widget) {
     		type: 'string',
     		defaultValue: ''
     	}),
+    	language: widget.property({
+    		type: 'string',
+    	    bindable: false,
+    	    defaultValue: 'en'
+    	}),
     	getValue: function() {
-    	    var _this = this;
-    		// get editor data
-    		return _this.content();
+    	    // get editor value
+    		return this.editor.getData();
     	},
     	setValue: function(value) {
-    	    var _this = this;
-    		// set editor data
-    		_this.content(value);
-    		_this.editor.setData(value);
+            var _this = this;
+   
+           	// throttle function to set editor content    
+        	if (_this.throttleSet) {
+        		clearTimeout(_this.throttleSet);
+        	}
+        	_this.throttleSet = setTimeout(function() {
+                // set editor data
+                if (value == 'null' || value == null) {
+              		_this.editor.setData('');
+                } else {
+              		_this.editor.setData(value);
+                }
+        	}, 50);
     	}
     });
 
     return CKEditor;
-
 });
 
 /* For more information, refer to http://doc.wakanda.org/Wakanda0.DevBranch/help/Title/en/page3871.html */
