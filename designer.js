@@ -23,6 +23,13 @@
         sourceTitle: '',
 		sourceDisplay: false
     });
+	
+    // Special events	
+	CKEditor.addEvent({
+		'name':'instanceReady',
+		'description':'On Instance Ready',
+		'category': 'Special Events'
+	});
 
 //    /* Add a Label property */
 //    CKEditor.addLabel({
