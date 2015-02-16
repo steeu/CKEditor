@@ -22,6 +22,6 @@
         {"id": "CKEditor/widget.js", "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
         {"id": "CKEditor/css/widget.css", "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
         {"id": "CKEditor/designer.js", "studioOnly": true, "version": "1.0.0", "path": "WIDGETS_CUSTOM"},
-        {"id": "CKEditor/libs/ckeditor/ckeditor.js", "version": "4.4.5", "path": "WIDGETS_CUSTOM"}
+        {"id": "CKEditor/libs/ckeditor/ckeditor.js", "runtimeOnly": true, "version": "4.4.5", "path": "WIDGETS_CUSTOM"}
     ]
 }
