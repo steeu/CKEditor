@@ -31,11 +31,11 @@
 		'category': 'Special Events'
 	});
 
-//    /* Add a Label property */
-//    CKEditor.addLabel({
-//        'defaultValue': '',
-//        'position': 'top'
-//    });
+    // Add a label property
+        CKEditor.addLabel({
+            'defaultValue': '',
+            'position': 'top'
+        });
 
 //    /* Set the Design and Styles panels */
 //    CKEditor.setPanelStyle({
