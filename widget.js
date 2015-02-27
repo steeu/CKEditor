@@ -76,6 +76,10 @@ WAF.define('CKEditor', ['waf-core/widget'], function(widget) {
               		_this.editor.setData(value);
                 }
         	}, 50);
+    	},
+    	setReadOnly: function(value) {
+    	    // set read only
+            this.editor.setReadOnly(value);
     	}
     });
 
