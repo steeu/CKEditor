@@ -2,7 +2,7 @@
     "name": "CKEditor",
     "studioName": "CKEditor",
     "category": "Custom Widgets",
-    "iconPath": "/icons/ckeditor.png",
+    "iconPath": "/icons/widget.png",
     "author": "Stefan Eugster",
     "contributors": [
         "Developer 1",
